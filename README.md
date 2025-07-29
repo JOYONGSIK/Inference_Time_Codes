@@ -7,10 +7,6 @@
   - `torch==2.0.1+cu117`
 - CUDA 버전: 12.3 (`.bashrc`에서 확인했음.)
 
-### LLaMA 8B 모델 사용 시 주의 사항
-- Hugging Face Token이 필요함
-- 토큰은 llama 8b code,  7번째 줄에 입력
-
 ### 리소스 모니터링 방법
 - watch -n 0.5을 사용해서 확인했습니다.
 - **GPU 메모리 사용량 확인할 때**
