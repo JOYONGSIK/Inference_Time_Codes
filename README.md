@@ -1,26 +1,18 @@
 ## Inference 환경 및 측정 방법
 
-### 환경 정보
-- UNIST 서버에서 진행 (GPU: RTX 3090)
-- Python 라이브러리 버전:
-  - `transformers==4.46.3`
-  - `torch==2.0.1+cu117`
-- CUDA 버전: 12.3 (`.bashrc`에서 확인했음.)
+### Python Install 
+- 아래 버전은 추천이지, 꼭 따를 필요 없음 
+  - ```pip install transformers==4.37.2```
+  - ```pip install torch==2.1.2``` 
 
-### 리소스 모니터링 방법
-- watch -n 0.5을 사용해서 확인했습니다.
-- **GPU 메모리 사용량 확인할 때**
-    ```bash
-    nvidia-smi
-    watch -n 0.5 nvidia-smi
-    ```
-- **Power Consumption 체크하는 법**
-    ```bash 
-    nvidia-smi -q -d POWER
-    watch -n 0.5 nvidia-smi -q -d POWER
-    ```
+### 아래 스텝 진행 
+1. ```python run_clip_opt.py``` 실행
+2. 위 파일이 돌아가는 중에, 아래 GPU 메모리 확인 라인 실행하여 스샷
+3. 위 파일이 돌아가는 중에, 아랴 전력 소모(Power Draw) 확인 라인 실행하여 스샷 
 
-### 진행한 실험 프로세스
-1.	for문을 100번 반복했을 때 전체 소요 시간 측정
-2.	Inference 과정에서 GPU 메모리 확인
-3.	Inference 과정 중 Power Consumption(Power Draw) 확인
+### GPU 메모리 확인 방법 
+```watch -n 0.5 nvidia-smi``` 
+
+### 전력 소모(Power Draw) 확인
+```watch -n 0.5 nvidia-smi -q -d POWER```
+위 명령어는 우분투를 위한 것이므로, Jetson은 조금 다를 수 있음
