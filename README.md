@@ -28,8 +28,3 @@
 1.	for문을 100번 반복했을 때 전체 소요 시간 측정
 2.	Inference 과정에서 GPU 메모리 확인
 3.	Inference 과정 중 Power Consumption(Power Draw) 확인
-4.	CLIP+OPT / CLIP+Llama 코드 실행 후 메모리, Power Consumption(Power Draw) 확인 
-5.	CLIP, Llama, OPT에서 time.sleep(1) 넣고 Power Consumption이 어떻게 변경되는지 확인
-
-- CLIP+OPT / CLIP+Llama 한번에 돌릴 때, 터미널 2개 켜놓고, CUDA_VISIBLE_DEVICES=0 으로 GPU 하나에 적용시켜서 돌렸었음.
-- merge_clip_llama.py, merge_clip_opt.py 파일 작성 후 코드 돌아가는 것 까지 확인 완료. 
